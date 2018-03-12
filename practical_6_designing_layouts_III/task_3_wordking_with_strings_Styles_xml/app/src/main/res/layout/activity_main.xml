@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.tomek.task_3_wordking_with_strings_styles_xml.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world" />
+
+    <EditText
+        android:id="@+id/inputText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonCall"
+        android:text="@string/press_me" />
+
+    <TextView
+        android:id="@+id/displayMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint" />
+
+    <TextView
+        android:id="@+id/displayMsg1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/work1" />
+
+    <TextView
+        android:id="@+id/displayMsg2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/work2" />
+    <TextView
+        android:id="@+id/displayMsg3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/good_string" />
+
+</LinearLayout>

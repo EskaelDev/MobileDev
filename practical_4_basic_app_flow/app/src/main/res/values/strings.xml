@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">practical_4_basic_app_flow</string>
+    <string name="LOGCAT_TAG">DebugTag</string>
 </resources>

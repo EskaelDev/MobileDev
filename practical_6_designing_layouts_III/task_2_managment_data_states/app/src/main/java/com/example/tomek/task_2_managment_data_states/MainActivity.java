@@ -1,43 +1,24 @@
-package com.example.tomek.practical_4_basic_app_flow;
+package com.example.tomek.task_2_managment_data_states;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
-public class SecondActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
+    String tag="tag";
+    EditText editText1;
+    EditText editText2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
-        Log.i(getResources().getString(R.string.LOGCAT_TAG), "SA onCreate: I'm being called");
+        setContentView(R.layout.activity_main);
 
-        TextView textView = (TextView) findViewById(R.id.secondtext);
-
-
-        Intent intent = getIntent();
-        String msg = intent.getStringExtra("msg");
-        int randint = intent.getIntExtra("randint", 0);
-        textView.setText(msg);
-        textView.append(String.valueOf(randint));
+        editText1 = findViewById(R.id.et1);
+        editText2 = findViewById(R.id.et3);
     }
-
-    public void toFirst(View view) {
-        Log.i(getResources().getString(R.string.LOGCAT_TAG), "toFirst: clicked on me");
-
-        Intent intent = new Intent(SecondActivity.this, FirstActivity.class);
-        TextView textView = findViewById(R.id.secondtext);
-
-        intent.putExtra("msg", textView.getText().toString());
-        setResult(Activity.RESULT_OK, intent);
-        finish();
-
-    }
-
 
     @Override
     protected void onResume() {
@@ -72,5 +53,17 @@ public class SecondActivity extends AppCompatActivity {
         super.onPause();
         Log.i(getResources().getString(R.string.LOGCAT_TAG), "SA onPause: I'm being called");
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(tag,editText1.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        editText2.setText(savedInstanceState.getString(tag, ""));
     }
 }

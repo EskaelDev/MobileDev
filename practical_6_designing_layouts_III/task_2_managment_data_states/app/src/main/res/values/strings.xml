@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">task_2_managment_data_states</string>
+    <string name="LOGCAT_TAG">Lifecycle</string>
+</resources>

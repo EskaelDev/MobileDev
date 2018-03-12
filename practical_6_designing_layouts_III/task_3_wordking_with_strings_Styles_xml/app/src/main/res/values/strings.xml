@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">task_3</string>
+    <string name="hello_world">Hello World, StringResourceProject1Activity!</string>
+    <string name="press_me">Press Me</string>
+    <string name="hint">Score will appear here...</string>
+    <string name="work1">This\'ll work</string>
+    <string name="work2">This\'ll also work</string>
+    <string name="good_string">This is a good string.</string>
+</resources>

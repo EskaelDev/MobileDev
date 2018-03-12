@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A2530"
+    android:orientation="vertical"
+    android:weightSum="5"
+    tools:context="com.example.tomek.task1.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.5"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/tl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:onClick="vertical_click"
+            android:text="Top left button" />
+
+        <Button
+            android:id="@+id/tm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:onClick="vertical_click"
+            android:text="Top middle button" />
+
+        <Button
+            android:id="@+id/tr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+
+            android:layout_weight="1"
+            android:onClick="vertical_click"
+            android:text="Top right button" />
+        <!--android:layout_marginLeft="80dp"-->
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/mid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="vertical_click"
+        android:text="middle button"
+
+        android:textAlignment="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="end"
+        android:layout_weight="2.5"
+        android:gravity="bottom"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/bl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            android:onClick="vertical_click"
+            android:text="Bottom left button" />
+
+        <Button
+            android:id="@+id/bm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            android:onClick="vertical_click"
+            android:text="Bottom middle button" />
+
+        <Button
+            android:id="@+id/br"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            android:onClick="vertical_click"
+            android:text="Bottom right button" />
+    </LinearLayout>
+
+</LinearLayout>
