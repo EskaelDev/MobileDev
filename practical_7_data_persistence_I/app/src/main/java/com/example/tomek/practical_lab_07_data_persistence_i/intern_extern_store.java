@@ -45,9 +45,16 @@ public class intern_extern_store extends AppCompatActivity {
 
     public void save2(View view) {
 
+        saveIntern();
+        saveExtern();
+
+
+    }
+
+    private void saveIntern() {
         FileOutputStream fileOutS;
-        ObjectOutputStream objOutS;
         DataOutputStream dataOutputStream;
+
         try {
             fileOutS = this.openFileOutput(INTERNALFILENAME, this.MODE_PRIVATE);
             dataOutputStream = new DataOutputStream(fileOutS);
@@ -61,15 +68,36 @@ public class intern_extern_store extends AppCompatActivity {
         } catch (Exception e) {
             Log.e("Error", e.getMessage());
         }
+    }
 
+    private void saveExtern() {
+        FileOutputStream fileOutS;
+        DataOutputStream dataOutputStream;
 
+        try {
+            fileOutS = this.openFileOutput(EXTERNALFILENAME, this.MODE_PRIVATE);
+            dataOutputStream = new DataOutputStream(fileOutS);
 
+            dataOutputStream.writeUTF(externEditText.getText().toString());
+
+            dataOutputStream.close();
+            fileOutS.close();
+            Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
+
+        } catch (Exception e) {
+            Log.e("Error", e.getMessage());
+        }
     }
 
     public void load2(View view) {
+        loadIntern();
+        loadExtern();
+    }
+
+    private void loadIntern() {
         FileInputStream fis;
-        ObjectInputStream ois;
         DataInputStream dataInputStream;
+
         try {
             fis = this.openFileInput(INTERNALFILENAME);
             dataInputStream = new DataInputStream(fis);
@@ -82,11 +110,33 @@ public class intern_extern_store extends AppCompatActivity {
 
 
             Toast.makeText(this, "Loaded", Toast.LENGTH_SHORT).show();
-        } catch (IOException  e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
+
+
+    private void loadExtern() {
+        FileInputStream fis;
+        DataInputStream dataInputStream;
+
+        try {
+            fis = this.openFileInput(EXTERNALFILENAME);
+            dataInputStream = new DataInputStream(fis);
+
+            String text = dataInputStream.readUTF();
+
+            externEditText.setText(text);
+
+            fis.close();
+
+
+            Toast.makeText(this, "Loaded", Toast.LENGTH_SHORT).show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+/*
 
     public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
@@ -106,6 +156,7 @@ public class intern_extern_store extends AppCompatActivity {
         }
         return file;
     }
+*/
 
 
 }
